@@ -49,7 +49,7 @@ app.post('/api/todos', function (req, res) {
             if (err)
                 res.send(err);
 
-            Todo.json(todos);
+            res.json(todos);
         });
     })
 });
