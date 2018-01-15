@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var path = require('path');
 
 mongoose.connect('127.0.0.1:27017/scotch-todo');
 
@@ -66,8 +67,13 @@ app.delete('/api/todos/:todo_id', function (req, res) {
                 res.send(err);
 
             res.json(todos);
-        })
+        });
     });
+});
+
+app.get('*', function (req, res) {
+    //load the page that angular will handle on the frontend
+    res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 
 app.listen('5000');
