@@ -20,6 +20,7 @@ var Todo = mongoose.model('Todo', {
 
 
 //app routes
+
 //Get all todos
 app.get('/api/todos', function (req, res) {
    Todo.find(function (err, todos) {
