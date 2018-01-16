@@ -1,0 +1,5 @@
+//Establish db connecction here
+
+module.exports = {
+    url: '127.0.0.1:27017/scotch-todo'
+};
